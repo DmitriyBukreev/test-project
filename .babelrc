@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // preferred option for browsers
+        // stops Babel from converting modules
+        "modules": false
+      }
+    ]
+  ]
+}

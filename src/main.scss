@@ -1,0 +1,18 @@
+@import "assets/fonts/fonts.scss";
+
+$font-size: 1rem;
+$font-color: lch(28 99 35);
+
+html {
+  font-family: "Roboto";
+  font-size: $font-size;
+  color: $font-color;
+}
+
+.image {
+  width: 10em;
+}
+
+.logo {
+  width: 10em;
+}

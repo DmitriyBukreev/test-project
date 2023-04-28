@@ -18,6 +18,12 @@ module.exports = {
     ),
   },
 
+  resolve: {
+    alias: {
+      "@images": path.resolve(__dirname, "src", "assets", "images"),
+    },
+  },
+
   module: {
     rules: [
       {
@@ -31,10 +37,6 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        // Webpack reads this list from right to left
-        // sass-loader    - traspiles sass to valid css
-        // postcss-loader - makes use of it's preset-env plugin to make css compatible with other browsers
-        // css-loader     - interprets all @import and url() statements
         use: ["css-loader", "postcss-loader", "sass-loader"],
       },
       {
@@ -64,20 +66,10 @@ module.exports = {
         onStart: {
           delete: ["dist"],
         },
-        onEnd: {
-          copy: [
-            {
-              source: path.join("src", "assets", "static"),
-              destination: "dist",
-            },
-          ],
-        },
       },
     }),
     new PugPlugin({
-      // mini-css-extract-plugin replacement
       css: {
-        // output filename of CSS files
         filename: "assets/css/[name].[contenthash:8].css",
       },
       js: {

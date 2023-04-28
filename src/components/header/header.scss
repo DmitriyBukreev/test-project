@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--background-primary);
+  position: relative;
+
+  &__inner {
+    display: grid;
+    grid-template: "logo menu search buttons" / auto auto 1fr auto;
+    align-items: center;
+    padding: 27px 0px 26px;
+
+    @include respond(mobile) {
+      padding: 15px 0px;
+    }
+  }
+
+  &__search {
+    grid-area: search;
+    justify-self: start;
+
+    @include respond(mobile) {
+      justify-self: end;
+      margin-right: 30px;
+    }
+  }
+
+  &__buttons {
+    grid-area: buttons;
+    display: flex;
+    gap: 30px;
+
+    @include respond(mobile) {
+      gap: 15px;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__logo {
+    @include respond(mobile) {
+      height: 60px;
+      width: 60px;
+    }
+  }
+}

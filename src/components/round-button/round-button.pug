@@ -1,0 +1,5 @@
+mixin roundButton(icon, respond, num)
+  button.round-button(class=`${respond ? `round-button_${respond}`: ''}`)&attributes(attributes)
+    svg.icon: use(href=`${sprites}#${icon}`)
+    if num > 0
+      div.round-button__number= num

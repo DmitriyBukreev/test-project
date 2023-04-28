@@ -1,13 +1,30 @@
 doctype html
-html(lang= 'ru')
+- const sprites = require('@images/icons_sprite.svg')
+include components/components
+
+html
   head
-    link(href=require('main.scss') rel='stylesheet')
-    meta(charset='utf-8')
-    title= 'Быстрый запуск Webpack'
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href=require('main.scss'))
+    title Dell products 
+    script(src=require('assets/js/burger.js') defer)
   body
-    script(src=require('index.js'))
-    p Файл откомпилирован шаблонизатором Pug
-    .image-png
-      img.image(src=require('assets/images/1024px-Lenna.png') alt='Изображение png')
-    .logo-svg 
-      img.logo(src=require('assets/images/SVG_Logo.svg') alt='Лого svg')
+    header.header
+      .container
+        .header__inner
+          img.header__logo(src=require('@images/logo.png'))
+          nav.menu(data-menu-state='closed')
+            ul.menu__inner 
+              +menu-item('ГЛАВНАЯ')
+              +menu-item('КАТАЛОГ')
+              +menu-item('НОВОСТИ')
+              +menu-item('НАШ АСЦ')
+              +menu-item('КОНТАКТЫ')
+          svg.icon.header__search: use(href=`${sprites}#search`)
+          .header__buttons 
+            +roundButton('profile')
+            +roundButton('signal', 'desktop')
+            +roundButton('favourite', 'desktop')
+            +roundButton('shoppingbag', _, 3)
+            +roundButton('burger', 'mobile')(data-burger)
+    .content(style={background: 'green', height: '100%'})

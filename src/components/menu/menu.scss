@@ -1,0 +1,62 @@
+.menu {
+  padding: 0px 50px 0px 60px;
+
+  @keyframes openMenu {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    50% {
+      transform: rotateX(-20deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+  }
+
+  &__item {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &__link {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  @include respond(mobile) {
+    position: absolute;
+    transform: translate(-15px, 100%);
+    bottom: 0px;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(63, 63, 63, 0.5);
+    padding: 0;
+    display: none;
+
+    &__inner {
+      padding: 56px 0px 68px 38px;
+      background: white;
+      flex-direction: column;
+    }
+
+    &[data-menu-state="opened"] {
+      display: block;
+    }
+
+    &[data-menu-state="opened"] &__inner {
+      animation: openMenu 500ms ease-in-out forwards;
+      transform-origin: top center;
+    }
+  }
+}

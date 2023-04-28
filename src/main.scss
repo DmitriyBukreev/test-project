@@ -1,18 +1,21 @@
+@import "reset.css";
+@import "mixins.scss";
 @import "assets/fonts/fonts.scss";
+@import "components/components.scss";
 
-$font-size: 1rem;
-$font-color: lch(28 99 35);
-
-html {
-  font-family: "Roboto";
-  font-size: $font-size;
-  color: $font-color;
+:root {
+  --element-color: #33a9ff;
+  --background-primary: #ffffff;
+  --text: #292d32;
+  --grey-1: #f9f9f9;
+  --grey-2: #acacac;
 }
 
-.image {
-  width: 10em;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.logo {
-  width: 10em;
+html,
+body {
+  height: 100%;
 }

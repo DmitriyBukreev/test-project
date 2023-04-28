@@ -1,0 +1,52 @@
+.round-button {
+  display: flex;
+  background-color: var(--grey-1);
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-color: transparent;
+
+  @include respond(mobile) {
+    height: 46px;
+    width: 46px;
+  }
+
+  &:hover {
+    background-color: var(--grey-2);
+  }
+
+  &_desktop {
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &_mobile {
+    display: none;
+    @include respond(mobile) {
+      display: flex;
+    }
+  }
+
+  &__number {
+    height: 16px;
+    width: 16px;
+    background-color: var(--element-color);
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

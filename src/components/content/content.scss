@@ -1,0 +1,20 @@
+.content {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  @include respond(mobile) {
+    position: static;
+  }
+
+  &_dark {
+    background: var(--background-secondary);
+  }
+
+  &_background {
+    position: absolute;
+  }
+}

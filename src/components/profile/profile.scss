@@ -1,0 +1,39 @@
+.profile {
+  background: var(--background-primary);
+  border-radius: 20px;
+  min-width: 389px;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(33, 36, 41, 0.25);
+
+  &__header {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    padding: 20px 30px;
+  }
+
+  &__text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--text);
+  }
+
+  &:before {
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-color: var(--background-primary);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

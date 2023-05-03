@@ -15,7 +15,18 @@
   }
 
   &:hover {
-    background-color: var(--grey-2);
+    background-color: var(--grey-3);
+  }
+
+  &__context-menu {
+    position: absolute;
+    display: none;
+    top: calc(100% + 24px);
+    z-index: 100;
+  }
+
+  &:hover &__context-menu {
+    display: block;
   }
 
   &_desktop {

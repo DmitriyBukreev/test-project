@@ -76,5 +76,18 @@
             <line x1="1.63599" y1="13.3034" x2="13.3032" y2="1.63609" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
         </symbol>
 
+        <symbol width="12" height="11" id="follow" viewBox="0 0 12 11" fill="none">
+            <path d="M4.70806 1.63029L6.22623 0.0933748L11.5305 5.3976L6.22623 10.7018L4.70806 9.18366L7.40703 6.46595H0.97823V4.31052H7.40703L4.70806 1.63029Z" fill="white"/>
+        </symbol>
+
+        <symbol width="25" height="39" id="mouse" viewBox="0 0 25 39" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M23 13V26.5C23 32.299 18.299 37 12.5 37C6.70101 37 2 32.299 2 26.5V13C2 7.20101 6.70101 2.5 12.5 2.5C18.299 2.5 23 7.20101 23 13ZM0 13C0 6.09644 5.59644 0.5 12.5 0.5C19.4036 0.5 25 6.09644 25 13V26.5C25 33.4036 19.4036 39 12.5 39C5.59644 39 0 33.4036 0 26.5V13ZM11.5 20.5V29.5L13.5 29.5V20.5H11.5Z" fill="#33A9FF"/>
+        </symbol>
+
+        <symbol width="106" height="23" id="next" viewBox="0 0 106 23" fill="none" >
+            <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="#292D32" stroke-width="1.5"/>
+        </symbol>
+
+
     </defs>
 </svg>

@@ -4,11 +4,16 @@
 @import "components/components.scss";
 
 :root {
-  --element-color: #33a9ff;
-  --background-primary: #ffffff;
   --text: #292d32;
+  --text-secondary: #838383;
   --grey-1: #f9f9f9;
-  --grey-2: #acacac;
+  --grey-2: #f2f2f2;
+  --grey-3: #acacac;
+
+  --element-color: #33a9ff;
+  --element-subelement: #ffffff;
+  --background-primary: #ffffff;
+  --background-secondary: var(--grey-2);
 }
 
 body {
@@ -17,5 +22,5 @@ body {
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }

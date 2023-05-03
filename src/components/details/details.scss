@@ -1,0 +1,71 @@
+.details {
+  display: grid;
+
+  &__title {
+    grid-area: title;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 59px;
+    color: var(--text);
+
+    @include respond(mobile) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__description {
+    grid-area: description;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--text-secondary);
+
+    @include respond(mobile) {
+      font-size: 15px;
+    }
+  }
+
+  &__follow {
+    grid-area: follow;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  &__button {
+    height: 55px;
+    width: 55px;
+    background: var(--element-color);
+    border-radius: 50%;
+    border-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include respond(mobile) {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  &__button-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(text);
+  }
+
+  &__icon {
+    height: 11px;
+    width: 12px;
+  }
+}

@@ -1,0 +1,33 @@
+@import "components/swiper/swiper-bundle.css";
+
+.swiper {
+  background: var(--grey-2);
+  height: 683px;
+
+  .swiper__scroll-to {
+    display: block;
+    position: absolute;
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  position: static;
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background: #d0d0d0;
+}
+
+.swiper-pagination-bullet-active {
+  width: 9px;
+  height: 9px;
+  background: #292d32;
+}
+
+.swiper-next {
+  cursor: pointer;
+}

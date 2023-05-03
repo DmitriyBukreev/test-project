@@ -1,0 +1,111 @@
+.slider {
+  position: relative;
+
+  &__details {
+    margin-top: 250px;
+    margin-left: 130px;
+    grid-template:
+      "description" auto
+      "top-gap" 15px
+      "title" auto
+      "bottom-gap" 60px
+      "follow" auto;
+
+    @include respond(mobile) {
+      grid-template:
+        "description" auto
+        "top-gap" 5px
+        "title" auto
+        "bottom-gap" 28px
+        "follow" auto;
+      margin: 85px 0 0 0;
+      position: relative;
+    }
+  }
+
+  &__side {
+    background-color: var(--grey-1);
+    min-width: 26.5%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+
+    @include respond(mobile) {
+      position: relative;
+    }
+  }
+
+  &__text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    padding: 320px 0 0 40px;
+
+    @include respond(mobile) {
+      padding: 59px 0 59px 15px;
+    }
+  }
+
+  &__image {
+    margin-top: -244px;
+    @include respond(mobile) {
+      position: absolute;
+      top: 15px;
+      margin: 0;
+      right: 0;
+    }
+  }
+
+  &__image-overlay {
+    position: absolute;
+    top: -179px;
+    left: 534px;
+
+    @include respond(mobile) {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 327px;
+      width: 325px;
+    }
+  }
+
+  &__pagination {
+    transform: translateX(-80px);
+
+    @include respond(mobile) {
+      transform: translateX(-39px);
+    }
+  }
+
+  &__control {
+    z-index: 75;
+    position: absolute;
+    bottom: 163px;
+
+    &_group {
+      display: flex;
+      flex-wrap: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    @include respond(mobile) {
+      right: 5px;
+      top: -34px;
+      bottom: initial;
+    }
+  }
+
+  &__background-text {
+    padding-top: 97.4px;
+
+    @include respond(mobile) {
+      padding: 18px 0 0 15px;
+    }
+  }
+}

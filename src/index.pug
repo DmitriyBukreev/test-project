@@ -8,23 +8,91 @@ html
     link(rel='stylesheet', href=require('main.scss'))
     title Dell products 
     script(src=require('assets/js/burger.js') defer)
+    script(src=require('components/swiper/swiper.js') defer)
   body
     header.header
       .container
         .header__inner
-          img.header__logo(src=require('@images/logo.png'))
+          a(href='/')
+            img.header__logo(src=require('@images/logo.png') alt='Logo image')
           nav.menu(data-menu-state='closed')
             ul.menu__inner 
-              +menu-item('ГЛАВНАЯ')
-              +menu-item('КАТАЛОГ')
-              +menu-item('НОВОСТИ')
-              +menu-item('НАШ АСЦ')
-              +menu-item('КОНТАКТЫ')
+              +menu-item('Главная')
+              +menu-item('Каталог', '#catalogue')
+              +menu-item('Новости')
+              +menu-item('Наш АСЦ')
+              +menu-item('Контакты')
           svg.icon.header__search: use(href=`${sprites}#search`)
           .header__buttons 
-            +roundButton('profile')
+            +roundButton('profile', _, _, true)
+              menu.profile 
+                .profile__header
+                  .round-button
+                    svg.icon: use(href=`${sprites}#profile`)
+                  p.profile__text Мария 
+                .profile__item: p.profile__text Личный кабинет
+                .profile__item: p.profile__text История заказов
+                .profile__item: p.profile__text Персональные предложения
+                .profile__item: p.profile__text Выйти
             +roundButton('signal', 'desktop')
             +roundButton('favourite', 'desktop')
             +roundButton('shoppingbag', _, 3)
             +roundButton('burger', 'mobile')(data-burger)
-    .content(style={background: 'green', height: '100%'})
+
+    #main.slider
+      .swiper
+        .swiper-wrapper
+          .swiper-slide
+            .content.content_background.content_dark
+              .container
+                .background-text.slider__background-text DELL
+            .content
+              .container.container_relative
+                .details.slider__details
+                  .details__description Новое поступление
+                  .details__title
+                    p Лучшие товары 
+                    p от компании Dell
+                  +details-button('Подробнее')
+                img.slider__image-overlay(src=require('@images/laptop.png'))
+          .swiper-slide 
+            section(style={
+              background: 'var(--background-primary)', 
+              height: '100%',
+              display: 'flex', 
+              'align-items': 'center',
+              'justify-content': 'center'
+              }) Slide 2
+          .swiper-slide
+            section(style={
+              background: 'var(--background-primary)', 
+              height: '100%',
+              display: 'flex', 
+              'align-items': 'center',
+              'justify-content': 'center'
+              }) Slide 3
+      .content 
+        .container
+          .scroll-to.slider__control
+            p.scroll-to__text Scroll to catalog
+            svg.scroll-to__icon: use(href=`${sprites}#mouse`)
+
+      .slider__side
+        .content
+          .slider__text
+            p Выгодное 
+            p предложение 
+            p от Dell
+        .content
+          picture
+            source(media="(max-width: 767px)", srcset=`${require("@images/laptop_1_tablet.png")}`)
+            source(media="(min-width: 768px)", srcset=`${require("@images/laptop_1_full.png")}`)
+            img.slider__image(src=`${require("@images/laptop_1_full.png")}` alt="Best offer laptop")
+        
+        .slider__control.slider__control_group
+          .swiper-pagination.slider__pagination
+          .swiper-next
+            include assets/images/next.svg
+    #catalogue(style={height: '300px', background: 'green'})
+
+      

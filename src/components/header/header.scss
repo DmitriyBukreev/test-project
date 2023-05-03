@@ -16,10 +16,10 @@
   &__search {
     grid-area: search;
     justify-self: start;
+    margin-right: 30px;
 
     @include respond(mobile) {
       justify-self: end;
-      margin-right: 30px;
     }
   }
 

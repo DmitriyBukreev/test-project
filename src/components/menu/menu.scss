@@ -27,6 +27,8 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   &__link {
@@ -43,6 +45,7 @@
     background: rgba(63, 63, 63, 0.5);
     padding: 0;
     display: none;
+    z-index: 100;
 
     &__inner {
       padding: 56px 0px 68px 38px;

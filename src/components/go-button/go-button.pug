@@ -1,0 +1,15 @@
+mixin go-button-tag(link)
+  if link
+    a.go-button__wrapper(href=`${link}`)&attributes(attributes)
+      block
+  else
+    button.go-button__wrapper(type="submit")&attributes(attributes)
+      block
+
+mixin go-button(text, link, textClasses=[])
+  .go-button
+    +go-button-tag(link)&attributes(attributes)
+      .go-button__element
+        svg.go-button__icon: use(href=`${require('@images/icons_sprite.svg')}#follow`)
+      .go-button__label(class=textClasses)= text
+

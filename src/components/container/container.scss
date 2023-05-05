@@ -9,4 +9,20 @@
   @include respond(mobile) {
     padding: 0px 15px;
   }
+
+  &_wide {
+    max-width: 1920px;
+  }
+
+  &_desktop {
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &_mobile {
+    @include respond(mobile) {
+      padding: 0;
+    }
+  }
 }

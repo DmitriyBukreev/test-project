@@ -1,0 +1,134 @@
+.contacts {
+  background: var(--background-secondary);
+  padding: 187px 0 20px;
+  position: relative;
+
+  @include respond(mobile) {
+    padding: 0;
+  }
+
+  &__card {
+    position: absolute;
+    margin-top: -346px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include respond(mobile) {
+      position: relative;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  &__section {
+    padding: 100px;
+
+    &_about {
+      background: #f9f9f9;
+      border-radius: 20px 0px 0px 20px;
+      position: relative;
+
+      @include respond(mobile) {
+        padding: 101px 63px 60px 30px;
+        border-radius: 0;
+      }
+    }
+
+    &_form {
+      background: var(--background-dark);
+      border-radius: 0px 20px 20px 0px;
+      padding: 100px 137px 103px 129px;
+
+      @include respond(mobile) {
+        border-radius: 0;
+        padding: 60px 30px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    color: var(--text);
+    padding-bottom: 18px;
+
+    &_dark {
+      color: var(--text-dark);
+    }
+
+    @include respond(mobile) {
+      font-size: 30px;
+      line-height: 50px;
+    }
+  }
+
+  &__hint {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-secondary);
+
+    &_dark {
+      color: var(--text-dark);
+    }
+
+    @include respond(mobile) {
+      font-size: 15px;
+    }
+  }
+
+  &__form {
+    padding: 65px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 52.75px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    padding: 51px 0 60px;
+    gap: 50px;
+    max-width: 407px;
+    padding-right: 86px;
+
+    @include respond(mobile) {
+      padding: 40px 0 30px;
+      gap: 30px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+  }
+
+  &__socials-item {
+    height: 37px;
+    width: 37px;
+
+    @include respond(mobile) {
+      height: 26px;
+      width: 26px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 151px;
+    right: -58px;
+
+    @include respond(mobile) {
+      top: initial;
+      bottom: -34px;
+      right: 34px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.go-button {
+  display: inline;
+
+  &__wrapper {
+    display: inline-grid;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    grid-template: "button label";
+    justify-content: start;
+    background: transparent;
+    border: 0px;
+
+    &:link {
+      text-decoration: none;
+    }
+  }
+
+  &_flipped {
+    grid-template: "label button";
+    justify-self: end;
+
+    @include respond(mobile) {
+      grid-template: "button label";
+      justify-self: auto;
+    }
+  }
+
+  &__element {
+    grid-area: button;
+    height: 55px;
+    width: 55px;
+    background: var(--element-color);
+    border-radius: 50%;
+    border-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include respond(mobile) {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  &__icon {
+    height: 11px;
+    width: 12px;
+  }
+
+  &__label {
+    grid-area: label;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--text);
+    text-decoration: none;
+
+    &_dark {
+      color: var(--text-dark);
+    }
+  }
+}

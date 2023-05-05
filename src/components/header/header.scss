@@ -38,6 +38,8 @@
   }
 
   &__logo {
+    height: 70px;
+    width: 70px;
     @include respond(mobile) {
       height: 60px;
       width: 60px;

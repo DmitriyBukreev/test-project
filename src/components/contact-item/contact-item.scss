@@ -1,0 +1,51 @@
+.contact-item {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__icon-container {
+    height: 36px;
+    width: 36px;
+    flex-shrink: 0;
+
+    @include respond(mobile) {
+      height: 17px;
+      width: 17px;
+    }
+  }
+
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--text-secondary);
+
+    @include respond(mobile) {
+      font-size: 15px;
+      line-height: 133.69%;
+    }
+  }
+
+  &__value {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: var(--text);
+
+    @include respond(mobile) {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,24 +1,25 @@
 .slider {
   position: relative;
+  overflow: hidden;
 
   &__details {
     margin-top: 250px;
     margin-left: 130px;
     grid-template:
-      "description" auto
+      "description" max-content
       "top-gap" 15px
-      "title" auto
+      "title" max-content
       "bottom-gap" 60px
-      "follow" auto;
+      "follow" max-content;
 
     @include respond(mobile) {
       grid-template:
-        "description" auto
+        "description" max-content
         "top-gap" 5px
-        "title" auto
+        "title" max-content
         "bottom-gap" 28px
-        "follow" auto;
-      margin: 85px 0 0 0;
+        "follow" max-content;
+      margin: 77px 0 0 0;
       position: relative;
     }
   }
@@ -47,6 +48,8 @@
 
     @include respond(mobile) {
       padding: 59px 0 59px 15px;
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 
@@ -95,8 +98,8 @@
     }
 
     @include respond(mobile) {
-      right: 5px;
-      top: -34px;
+      right: 14px;
+      top: -36px;
       bottom: initial;
     }
   }

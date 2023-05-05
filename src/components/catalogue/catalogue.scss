@@ -1,0 +1,164 @@
+.catalogue {
+  padding: 164px 0 180px;
+  @include respond(mobile) {
+    padding: 120px 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 40px;
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  &__details {
+    grid-template:
+      "title" max-content
+      "top-gap" 29px
+      "description" max-content
+      "bottom-gap" 46px
+      "follow" max-content;
+
+    @include respond(mobile) {
+      grid-template:
+        "title" max-content
+        "top-gap" 20px
+        "description" max-content
+        "bottom-gap" 30px
+        "follow" max-content;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__card {
+    border-radius: 20px;
+    padding: 40px;
+    background: var(--background-secondary);
+    position: relative;
+
+    &:nth-child(odd) {
+      background: var(--grey-1);
+    }
+
+    @include respond(mobile) {
+      padding: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  &__number {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100;
+    font-size: 25px;
+    line-height: 150%;
+    color: var(--text);
+
+    @include respond(mobile) {
+      font-size: 20px;
+      position: absolute;
+    }
+  }
+
+  &__amount {
+    margin-top: 186px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--text-secondary);
+
+    @include respond(mobile) {
+      font-size: 15px;
+      line-height: 133.69%;
+      margin-top: 0px;
+    }
+  }
+
+  &__title {
+    margin-top: 5px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    color: var(--text-primary);
+
+    @include respond(mobile) {
+      font-size: 20px;
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include respond(mobile) {
+      position: relative;
+    }
+
+    &_1 {
+      margin-top: -10px;
+      @include respond(mobile) {
+        margin-top: -5px;
+        padding-bottom: 12px;
+      }
+    }
+
+    &_2 {
+      margin-top: -21px;
+      margin-left: 26px;
+      @include respond(mobile) {
+        margin-top: -11px;
+        margin-left: 30px;
+        padding-bottom: 14px;
+      }
+    }
+
+    &_3 {
+      margin-top: 81px;
+      @include respond(mobile) {
+        margin-top: 43px;
+        padding-bottom: 48px;
+      }
+    }
+
+    &_4 {
+      margin-top: 59px;
+      @include respond(mobile) {
+        margin-top: 25px;
+        padding-bottom: 48px;
+      }
+    }
+
+    &_5 {
+      margin-top: 38px;
+      margin-left: 28.5px;
+      @include respond(mobile) {
+        margin-left: 22px;
+        margin-top: 9px;
+        padding-bottom: 22px;
+      }
+    }
+  }
+
+  &__details-title {
+    max-width: 388px;
+
+    @include respond(mobile) {
+      max-width: 249px;
+    }
+  }
+
+  &__details-description {
+    max-width: 372px;
+  }
+}

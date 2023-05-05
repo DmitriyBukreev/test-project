@@ -73,7 +73,7 @@ module.exports = {
         filename: "assets/css/[name].[contenthash:8].css",
       },
       js: {
-        filename: "assets/js/[name].[contenthash:8].css",
+        filename: "assets/js/[name].[contenthash:8].js",
       },
     }),
   ],

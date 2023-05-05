@@ -4,6 +4,10 @@
   background: var(--grey-2);
   height: 683px;
 
+  @include respond(mobile) {
+    height: 593px;
+  }
+
   .swiper__scroll-to {
     display: block;
     position: absolute;
@@ -20,14 +24,32 @@
   width: 5px;
   height: 5px;
   background: #d0d0d0;
+
+  @include respond(mobile) {
+    width: 3px;
+    height: 3px;
+  }
 }
 
 .swiper-pagination-bullet-active {
   width: 9px;
   height: 9px;
   background: #292d32;
+
+  @include respond(mobile) {
+    width: 5px;
+    height: 5px;
+  }
 }
 
 .swiper-next {
   cursor: pointer;
+  height: 21px;
+  width: 104.5px;
+  flex-shrink: 0;
+
+  @include respond(mobile) {
+    height: 14px;
+    width: 64px;
+  }
 }

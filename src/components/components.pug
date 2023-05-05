@@ -1,3 +1,9 @@
 include round-button/round-button
 include menu/menu
-include details/details
+include go-button/go-button
+
+mixin image(name)
+  picture 
+    source(media="(max-width: 767px)", srcset=`${require(`@images/${name}_tablet.png`)}`)
+    source(media="(min-width: 768px)", srcset=`${require(`@images/${name}_full.png`)}`)
+    img(src=`${require(`@images/${name}_full.png`)}`)&attributes(attributes)

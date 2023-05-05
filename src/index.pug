@@ -30,10 +30,10 @@ html
                   .round-button
                     svg.icon: use(href=`${sprites}#profile`)
                   p.profile__text Мария 
-                .profile__item: p.profile__text Личный кабинет
-                .profile__item: p.profile__text История заказов
-                .profile__item: p.profile__text Персональные предложения
-                .profile__item: p.profile__text Выйти
+                .profile__item: a.profile__text(href='/') Личный кабинет
+                .profile__item: a.profile__text(href='/') История заказов
+                .profile__item: a.profile__text(href='/') Персональные предложения
+                .profile__item: a.profile__text(href='/') Выйти
             +roundButton('signal', 'desktop')
             +roundButton('favourite', 'desktop')
             +roundButton('shoppingbag', _, 3)
@@ -53,8 +53,9 @@ html
                   .details__title
                     p Лучшие товары 
                     p от компании Dell
-                  +details-button('Подробнее')
-                img.slider__image-overlay(src=require('@images/laptop.png'))
+                  .details__follow
+                    +go-button("Подробнее", '/')
+                img.slider__image-overlay(src=require('@images/laptop.png') alt='Laptop in background')
           .swiper-slide 
             section(style={
               background: 'var(--background-primary)', 
@@ -84,15 +85,315 @@ html
             p предложение 
             p от Dell
         .content
-          picture
-            source(media="(max-width: 767px)", srcset=`${require("@images/laptop_1_tablet.png")}`)
-            source(media="(min-width: 768px)", srcset=`${require("@images/laptop_1_full.png")}`)
-            img.slider__image(src=`${require("@images/laptop_1_full.png")}` alt="Best offer laptop")
+          +image('laptop_1')(alt='Best offer image', class='slider__image')
         
         .slider__control.slider__control_group
           .swiper-pagination.slider__pagination
-          .swiper-next
-            include assets/images/next.svg
-    #catalogue(style={height: '300px', background: 'green'})
+          include assets/images/next.svg
+    
+    #catalogue.catalogue
+      .container
+        .catalogue__inner
+          .details.catalogue__details
+            .details__title.details__title_dense.catalogue__details-title
+              | Каталог товаров от Dell
+            .details__description.catalogue__details-description
+              | Наша компания является
+              | зарегистрированным и официальным
+              | партнёром Dell в России
+            .details__follow
+              +go-button('В каталог')
+          .catalogue__card 
+            .catalogue__number 01
+            +image('catalogue_01')(alt='Laptops', class='catalogue__image catalogue__image_1')
+            .catalogue__amount 105 товаров
+            .catalogue__title Ноутбуки
+          
+          .catalogue__card 
+            .catalogue__number 02
+            +image('catalogue_02')(alt='PCs', class='catalogue__image catalogue__image_2')
+            .catalogue__amount 65 товаров
+            .catalogue__title Персональные компьютеры
+            
+          .catalogue__card 
+            .catalogue__number 03
+            +image('catalogue_03')(alt='Servers', class='catalogue__image catalogue__image_3')
+            .catalogue__amount 13 товаров
+            .catalogue__title Серверы
+            
+          .catalogue__card 
+            .catalogue__number 04
+            +image('catalogue_04')(alt='EMC', class='catalogue__image catalogue__image_4')
+            .catalogue__amount 2345 товаров
+            .catalogue__title Dell EMC
+            
+          .catalogue__card 
+            .catalogue__number 05
+            +image('catalogue_05')(alt='EMC parts', class='catalogue__image catalogue__image_5')
+            .catalogue__amount 195 товаров
+            .catalogue__title Запасные части к Dell EMC
+    
+    #advantages.advantages
+      .container.container_wide
+        .details.advantages__details
+          .details__title
+            | Наши преимущества
+          .details__description
+            | Оптимизация мощностей (расходов, социальных выплат и т.п.) 
+            | позволили компании на 4,7% понизить цены по сравнению с конкурентами
+          .details__follow
+            +go-button('Оставить заявку', '/')
+      .content
+        .container.container_wide
+          .advantages__inner
+            include assets/images/best_quality.svg
+            +image('advantages')(alt="Best quality laptop", class='advantages__image')
+      .container
+        .advantages__cards
+          .advantages__card
+            .advantages__icon-box: svg.advantages__icon: use(href=`${sprites}#card`)
+            .advantages__title
+              p Самые выгодные
+              p и низкие цены
+            .advantages__description 
+              p В наличии широкий ассортимент, 
+              p а также доступные цены
+              p на ноутбуки Dell
+            include assets/images/corner.svg
+          
+          .advantages__card
+            .advantages__icon-box: svg.advantages__icon: use(href=`${sprites}#certified`)
+            .advantages__title
+              p Авторизованный сервисный
+              p центр DELL
+            .advantages__description
+              p Сертифицированный сервисный 
+              p центр по ремонту техники Dell 
+              p в России и странах СНГ
+            include assets/images/corner.svg
 
+          .advantages__card
+            .advantages__icon-box: svg.advantages__icon: use(href=`${sprites}#group`)
+            .advantages__title 
+              p Высокий уровень 
+              p технической экспертизы
+            .advantages__description 
+              p Мы прошли аттестацию в виде 
+              p тестирования, где показали
+              p высокий уровень знаний
+            include assets/images/corner.svg
+
+          .advantages__card
+            .advantages__icon-box: svg.advantages__icon: use(href=`${sprites}#package`)
+            .advantages__title 
+              p Официальный партнер 
+              p DELL
+            .advantages__description 
+              p Официальный поставщик 
+              p продукции DELL в России
+              p и странах СНГ
+            include assets/images/corner.svg
+
+    #news.news
+      .container
+        .details.news__details
+          .details__title Последние новости
+          .details__description 
+            | Вы можете посмотреть ещё больше интересных новостей 
+            | и узнать о последних новинках, перейдя по кнопке
+          .details__follow.news__follow
+            +go-button('Все новости', '/')(class="go-button_flipped")
+
+        .news__inner
+        
+          .news__card
+            .news__image-container
+              img.news__image(src=require('@images/news_1.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)
+
+          .news__card.news__card_desktop
+            .news__image-container
+              img.news__image(src=require('@images/news_2.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)
+
+          .news__card.news__card_desktop
+            .news__image-container
+              img.news__image(src=require('@images/news_3.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)
+
+          .news__card
+            .news__image-container
+              img.news__image(src=require('@images/news_4.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)
+
+          .news__card
+            .news__image-container
+              img.news__image(src=require('@images/news_5.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)  
+        
+          .news__card.news__card_desktop
+            .news__image-container
+              img.news__image(src=require('@images/news_6.png'))
+            .news__content-container
+              include assets/images/card_border.svg
+              .content.news__content
+                p.news__title GE использует технологии Dell
+                p.news__description Вы можете посмотреть ещё больше интересных 
+            .news__date
+              strong.news__day 11 
+              p июля
+            .news__button-container 
+              a.news__button(href='/')
+                svg.news__icon: use(href=`${sprites}#follow`)
+                
+    #contacts.contacts
+      .container.container_wide.container_desktop
+        include assets/images/our_contacts.svg
       
+      .content
+        .container.container_mobile
+          .contacts__card
+            .contacts__section.contacts__section_about
+              p.contacts__title Наши контакты
+              p.contacts__hint Вы можете связаться с нашим онлайн-консультантом
+              
+              .contacts__items
+                .contact-item
+                  .contact-item__wrapper
+                    svg.contact-item__icon-container: use(href=`${sprites}#address`)
+                    .contact-item__details
+                      p.contact-item__title Адрес
+                      p.contact-item__value Москва, ул. 3-я Хорошевская, дом 2, строение 1
+                
+                .contact-item
+                  .contact-item__wrapper
+                    svg.contact-item__icon-container: use(href=`${sprites}#email`)
+                    .contact-item__details
+                      p.contact-item__title E-mail
+                      p.contact-item__value dell_ru@gmail.com
+
+                .contact-item
+                  .contact-item__wrapper
+                    svg.contact-item__icon-container: use(href=`${sprites}#phone`)
+                    .contact-item__details
+                      p.contact-item__title Телефон
+                      .contact-item__value
+                        p +7 495 737-06-01
+                        p +7 495 737-06-01
+              .contacts__socials
+                svg.contacts__socials-item: use(href=`${sprites}#facebook`)
+                svg.contacts__socials-item: use(href=`${sprites}#whatsapp`)
+              +image('iphone')(class='contacts__image' alt="Tilted phone image")
+            .contacts__section.contacts__section_form
+              p.contacts__title.contacts__title_dark Оставьте заявку
+              p.contacts__hint Оставьте свой номер, и мы перезвоним Вам.
+              form.contacts__form(action='/')
+                
+                  .input
+                    label.input__label Ваше имя
+                    input.input__element(type="text", required)
+                  .input
+                    label.input__label Номер телефона
+                    input.input__element(type="tel", required)
+                  .input
+                    label.input__label Комментарий
+                    textarea.input__element(rows="3")
+                  +go-button("Заказать", _, 'go-button__label_dark')
+
+    footer.footer 
+      .container
+        .footer__nav
+          a.footer__logo(href='/')
+            img(src=require('@images/logo.png') alt='Logo image')
+          .footer__category.footer__category_catalogue
+            | Каталог
+            .footer__links.footer__links_catalogue
+              a.footer__link(href='/') Ноутбуки
+              a.footer__link(href='/') Персональные компьютеры
+              a.footer__link(href='/') Серверы
+              a.footer__link(href='/') Dell EMC
+              a.footer__link(href='/') Запасные части к Dell EMC
+
+          .footer__category.footer__category_profile
+            | Личный кабинет
+            .footer__links
+              a.footer__link(href='/') Профиль
+              a.footer__link(href='/') История заказов
+              a.footer__link(href='/') SMS-уведомления
+              a.footer__link(href='/') Избранное
+              a.footer__link(href='/') Сравнение товаров
+          
+          .footer__category.footer__category_help
+            | Помощь
+            .footer__links
+              a.footer__link(href='/') Доставка и оплата
+              a.footer__link(href='/') Контакты
+              a.footer__link(href='/') FAQ
+              a.footer__link(href='/') Наш АСЦ
+        
+        .footer__contacts
+          .footer__contact-item
+            .footer__contact-title Адрес 
+            .footer__contact-value Москва, ул. 3-я Хорошевская, дом 2, строение 1
+          .footer__contact-item
+            .footer__contact-title Телефон 
+            .footer__contact-value +7 495 737-06-01, +7 495 737-06-01
+          .footer__contact-item
+            .footer__contact-title E-mail 
+            .footer__contact-value dell_ru@gmail.com
+          .footer__socials
+            svg.footer__socials-item: use(href=`${sprites}#facebook`)
+            svg.footer__socials-item: use(href=`${sprites}#whatsapp`)
+
+      .container.container_wide
+        .footer__background-text DELL

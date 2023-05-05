@@ -1,0 +1,190 @@
+.news {
+  padding: 172px 0 526px;
+
+  @include respond(mobile) {
+    padding: 120px 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
+    gap: 40px;
+    justify-content: center;
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  &__details {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 25px 1fr;
+    grid-template-areas:
+      "title follow"
+      ". ."
+      "description .";
+    padding-bottom: 70px;
+
+    @include respond(mobile) {
+      grid-template:
+        "title" max-content
+        "top-gap" 20px
+        "description" max-content
+        "bottom-gap" 30px
+        "follow" max-content;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__follow {
+    justify-self: end;
+  }
+
+  &__image-container {
+    height: 260px;
+    overflow: hidden;
+    border-top-left-radius: 50px;
+    margin-bottom: -40px;
+
+    @include respond(mobile) {
+      margin-bottom: -108px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__card {
+    position: relative;
+    width: 415px;
+
+    @include respond(mobile) {
+      width: 324px;
+    }
+  }
+
+  &__card-border {
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.06);
+
+    @include respond(mobile) {
+      height: 142px;
+      width: 324px;
+    }
+  }
+
+  &__date {
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+    background: var(--background-primary);
+    position: absolute;
+    right: 0;
+    top: 65px;
+    transform: translateX(50%);
+    padding: 24px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(mobile) {
+      top: 54px;
+    }
+  }
+
+  &__day {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--text);
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  &__button-container {
+    height: 63px;
+    width: 63px;
+    bottom: 72px;
+    right: 27px;
+    background: var(--background-primary);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(mobile) {
+      height: 50px;
+      width: 50px;
+      bottom: 70px;
+      right: 21px;
+    }
+  }
+
+  &__button {
+    border-radius: 50%;
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: var(--background-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(mobile) {
+      height: 30px;
+      width: 30px;
+      bottom: 57px;
+      right: 21px;
+    }
+  }
+
+  &__content-container {
+    position: relative;
+  }
+
+  &__content {
+    padding: 24px 0 0 30px;
+
+    @include respond(mobile) {
+      position: absolute;
+      padding: 20px 0 0 20px;
+    }
+  }
+
+  &__icon {
+    height: 11px;
+    width: 12px;
+  }
+
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    max-width: 268px;
+    padding-bottom: 11px;
+
+    @include respond(mobile) {
+      line-height: 100%;
+    }
+  }
+
+  &__description {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include respond(mobile) {
+      max-width: 250px;
+    }
+  }
+}
